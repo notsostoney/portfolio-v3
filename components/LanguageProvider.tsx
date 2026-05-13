@@ -37,10 +37,10 @@ export default function LanguageProvider({ children }: { children: ReactNode }) 
     // <html> element. No-op if the boot script didn't find a stored pref.
     const domLang = document.documentElement.lang;
     if (
-      (domLang === "es" || domLang === "en") &&
+      (domLang === "fr" || domLang === "en" || domLang === "de" || domLang === "zh") &&
       domLang !== lang
     ) {
-      setLangState(domLang);
+      setLangState(domLang as Lang);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

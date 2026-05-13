@@ -14,163 +14,116 @@ import ProjectModal, {
 import { useLanguage } from "@/components/LanguageProvider";
 import type { Lang } from "@/lib/i18n";
 
-const EMAIL = "josemariaalberobelamendia@gmail.com";
+const EMAIL = "antoine.pornin.fr@gmail.com";
 
-// Localised content lives in `{ es, en }` objects inside these arrays so the
-// page can be a straightforward array.map() at render time. Tech names stay
-// as plain strings (they're brand names, not localised).
-type Localised = { es: string; en: string };
+type Localised = { fr: string; en: string; de: string; zh: string };
 
 type Project = ProjectDetail & {
   align: "left" | "right";
-  section: "project1" | "project2" | "project3" | "project4";
+  section: "project1" | "project2" | "project3";
 };
 
 const projects: Project[] = [
   {
     num: "01",
     name: {
-      es: "Contestador IA de Reseñas Google",
-      en: "AI Responder for Google Reviews",
+      fr: "Portfolio Interactif 3D",
+      en: "3D Interactive Portfolio",
+      de: "Interaktives 3D-Portfolio",
+      zh: "3D 交互式作品集",
     },
     stack: [
-      "Next.js",
-      "FastAPI",
-      "Python",
-      "PostgreSQL",
-      "Supabase",
-      "Claude API",
-      "Stripe",
-      "Celery",
+      "Next.js 16",
+      "React Three Fiber",
+      "Three.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "GitHub Pages",
     ],
     desc: {
-      es: "SaaS que genera respuestas personalizadas a reseñas de Google Business Profile con IA, manteniendo el tono de la marca.",
-      en: "SaaS that generates personalised replies to Google Business Profile reviews with AI while keeping the brand tone.",
+      fr: "Ce portfolio — construit avec Next.js 16 et React Three Fiber. Clavier 3D interactif, thèmes saisonniers, support multilingue FR/EN/DE/ZH.",
+      en: "This very portfolio — built with Next.js 16 and React Three Fiber. Interactive 3D keyboard, seasonal themes, multilingual FR/EN/DE/ZH support.",
+      de: "Dieses Portfolio — mit Next.js 16 und React Three Fiber gebaut. Interaktive 3D-Tastatur, Saisonthemen, mehrsprachig FR/EN/DE/ZH.",
+      zh: "这个作品集本身——使用 Next.js 16 和 React Three Fiber 构建，3D 交互键盘，季节主题，支持法/英/德/中。",
     },
     details: {
-      es: "Plataforma orientada a negocios locales en España para gestionar sus reseñas de Google Business Profile. El sistema hace polling cada 15 minutos, llama a Claude para generar respuestas alineadas con el tono de marca y las publica automáticamente (o las manda a revisión). Incluye Stripe con suscripciones y Customer Portal, autenticación con Google OAuth + PKCE, alertas por email/SMS para reseñas negativas y un dashboard con métricas.",
-      en: "A platform for local businesses in Spain to manage their Google Business Profile reviews. The system polls every 15 minutes, uses Claude to draft replies in the brand's tone and publishes them automatically (or sends them to review). Stripe handles subscriptions and Customer Portal, auth is Google OAuth with PKCE, and negative reviews fire email/SMS alerts. Dashboard with metrics included.",
+      fr: "Portfolio personnel basé sur le projet open-source de Txema Albero (Txemalon/3d-portfolio), entièrement reconfiguré pour Antoine Pornin. Remplace le système ES/EN par FR/EN/DE/ZH. Déployé sur GitHub Pages via export statique Next.js avec basePath /portfolio-v3. Clavier 3D généré procéduralement avec React Three Fiber, animations physiques, sons et taglines par touche.",
+      en: "Personal portfolio based on Txema Albero's open-source project (Txemalon/3d-portfolio), fully reconfigured for Antoine Pornin. Replaced ES/EN i18n with FR/EN/DE/ZH. Deployed on GitHub Pages via Next.js static export with basePath /portfolio-v3. 3D keyboard procedurally generated with React Three Fiber, physics animations, sounds and per-key taglines.",
+      de: "Persönliches Portfolio basierend auf Txema Alberos Open-Source-Projekt, vollständig für Antoine Pornin angepasst. ES/EN-i18n durch FR/EN/DE/ZH ersetzt. Deployment auf GitHub Pages via Next.js Static Export. 3D-Tastatur mit React Three Fiber, Physikanimationen und Ton.",
+      zh: "基于 Txema Albero 开源项目改造的个人作品集，将 ES/EN 替换为 FR/EN/DE/ZH 四语言支持，通过 Next.js 静态导出部署到 GitHub Pages。",
     },
-    url: "https://revio.txemaalbero.com/",
-    media: [
-      "/projects/revio/landing.png",
-      "/projects/revio/dashboard.png",
-      "/projects/revio/alertas.png",
-      "/projects/revio/analiticas.png",
-      "/projects/revio/negocios.png",
-      "/projects/revio/analiticas-ia.png",
-    ],
-    highlights: ["nextdotjs", "tailwindcss", "python", "postgresql"],
+    url: "https://notsostoney.github.io/portfolio-v3/",
+    github: "https://github.com/notsostoney/portfolio-v3",
+    media: [],
+    highlights: ["nextdotjs", "react", "typescript", "tailwindcss"],
     align: "left",
     section: "project1",
   },
   {
     num: "02",
     name: {
-      es: "Control de Temperaturas APPCC",
-      en: "HACCP Temperature Control",
+      fr: "Portfolio OS Windows 98",
+      en: "Windows 98 OS Portfolio",
+      de: "Windows 98 OS Portfolio",
+      zh: "Windows 98 风格作品集",
     },
     stack: [
-      "Next.js 16",
-      "FastAPI",
-      "Python",
-      "PostgreSQL",
-      "Supabase",
-      "Claude API",
-      "Stripe",
-      "Celery",
+      "React",
+      "TypeScript",
+      "React Router",
+      "CSS",
+      "GitHub Pages",
     ],
     desc: {
-      es: "App para restaurantes que digitaliza el registro de temperaturas APPCC y genera planes e informes automáticos para inspecciones sanitarias.",
-      en: "App for restaurants that digitises HACCP temperature logs and auto-generates plans and reports for food safety inspections.",
+      fr: "Portfolio interactif stylisé comme un OS Windows 98, avec fenêtres déplaçables, barre de tâches, et contenu multilingue FR/EN/DE/ZH.",
+      en: "Interactive portfolio styled as a Windows 98 OS, with draggable windows, taskbar, and multilingual FR/EN/DE/ZH content.",
+      de: "Interaktives Portfolio im Windows 98-Stil mit verschiebbaren Fenstern, Taskleiste und mehrsprachigem Inhalt FR/EN/DE/ZH.",
+      zh: "模拟 Windows 98 操作系统的交互式作品集，支持可拖拽窗口、任务栏，四语言内容。",
     },
     details: {
-      es: "Digitaliza el control APPCC completo de un restaurante: registros de temperatura, trazabilidad, alérgenos y generación asistida por IA de los planes HACCP. Integración con Open Food Facts para importar alérgenos, MFA en la autenticación, multi-idioma con next-intl y pagos por suscripción con Stripe. Backend 100% async con FastAPI + SQLAlchemy y tareas en Celery.",
-      en: "Full HACCP digitisation for a restaurant: temperature logs, traceability, allergens, and AI-assisted generation of HACCP plans. Integrates with Open Food Facts for allergens, MFA-protected auth, i18n with next-intl, subscription billing with Stripe. Fully async backend with FastAPI + SQLAlchemy and Celery workers.",
+      fr: "Site React inspiré du template open-source de Henry Heffernan, entièrement personnalisé pour Antoine Pornin. Fenêtres draggable et resizable, navigation par routes, sections About / Experience / Projects / Contact. Système i18n custom avec LanguageContext React (FR/EN/DE/ZH). Déployé sur GitHub Pages (portfolio-inner-site).",
+      en: "React site inspired by Henry Heffernan's open-source template, fully customised for Antoine Pornin. Draggable and resizable windows, route-based navigation, About / Experience / Projects / Contact sections. Custom i18n with React LanguageContext (FR/EN/DE/ZH). Deployed on GitHub Pages (portfolio-inner-site).",
+      de: "React-Site basierend auf Henry Heffernans Open-Source-Template, vollständig für Antoine Pornin angepasst. Verschiebbare und skalierbare Fenster, Routing-Navigation, eigenes i18n-System (FR/EN/DE/ZH). Deployment auf GitHub Pages.",
+      zh: "基于 Henry Heffernan 开源模板定制的 React 网站，可拖拽窗口、路由导航、自定义四语言 i18n 系统，部署于 GitHub Pages。",
     },
-    url: "https://aptia.txemaalbero.com/",
-    media: [
-      "/projects/aptia/landing.png",
-      "/projects/aptia/panel.png",
-      "/projects/aptia/registros.png",
-      "/projects/aptia/carta-alergenos.png",
-      "/projects/aptia/inspeccion.png",
-      "/projects/aptia/cuestionario.png",
-    ],
-    highlights: ["nextdotjs", "tailwindcss", "python", "postgresql", "typescript"],
-    badge: { es: "En desarrollo", en: "In progress" },
+    url: "https://notsostoney.github.io/portfolio-inner-site/",
+    github: "https://github.com/notsostoney/portfolio-inner-site",
+    media: [],
+    highlights: ["react", "typescript", "javascript", "css"],
     align: "right",
     section: "project2",
   },
   {
     num: "03",
     name: {
-      es: "Gestor de Finanzas Personales",
-      en: "Personal Finance Tracker",
+      fr: "Yiwu Sourcing — Intermédiation B2B",
+      en: "Yiwu Sourcing — B2B Intermediation",
+      de: "Yiwu Sourcing — B2B-Vermittlung",
+      zh: "义乌采购 — B2B 贸易中介",
     },
     stack: [
-      "Django",
-      "Python",
-      "SQLite",
-      "HTML5",
-      "CSS3",
-      "JavaScript",
-      "Chart.js",
-      "pandas",
+      "Commerce International",
+      "Sourcing",
+      "Négociation",
+      "Chine / France",
+      "WeChat / Alibaba",
     ],
     desc: {
-      es: "Dashboard para seguimiento de ingresos, gastos y objetivos de ahorro con visualizaciones gráficas, importación desde Excel e informes mensuales.",
-      en: "Dashboard to track income, expenses and savings goals with visual charts, Excel import and monthly reports.",
+      fr: "Activité d'intermédiation commerciale entre la France et Yiwu, Chine — identification et qualification de fournisseurs pour entreprises françaises.",
+      en: "Commercial intermediation between France and Yiwu, China — identifying and qualifying suppliers for French companies.",
+      de: "Handelsvermittlung zwischen Frankreich und Yiwu, China — Identifizierung und Qualifizierung von Lieferanten für französische Unternehmen.",
+      zh: "法中商贸中介活动——为法国企业识别和筛选义乌供应商，降低合作风险。",
     },
     details: {
-      es: "Aplicación Django clásica (MVT) para finanzas personales: categorización de gastos, objetivos de ahorro, importación masiva desde Excel (xlsx/xls) y gráficos con Chart.js. Temas claro/oscuro hechos con CSS puro y sin dependencias frontend. Un proyecto que prioriza simplicidad y robustez: sin frameworks en el cliente, autenticación nativa de Django, base de datos SQLite.",
-      en: "Classic Django (MVT) app for personal finance: expense categorisation, savings goals, bulk import from Excel (xlsx/xls) and Chart.js-powered graphs. Light/dark themes in pure CSS with zero frontend dependencies. A project that favours simplicity and robustness: no client framework, Django's built-in auth, SQLite storage.",
+      fr: "Activité indépendante développée en parallèle des études. Yiwu est la capitale mondiale du commerce de gros. Mission : réduire l'incertitude des entreprises françaises avant tout engagement avec un partenaire chinois. Identification de fournisseurs fiables, négociation des conditions, contrôle qualité de premier niveau, coordination logistique. Clients : PME françaises cherchant à diversifier leurs approvisionnements.",
+      en: "Independent activity developed alongside studies. Yiwu is the world's wholesale capital. Mission: reduce uncertainty for French companies before engaging with a Chinese partner. Identifying reliable suppliers, negotiating terms, first-level quality control, logistics coordination. Clients: French SMEs looking to diversify their supply chains.",
+      de: "Selbstständige Tätigkeit neben dem Studium. Yiwu ist die weltweite Großhandelshauptstadt. Mission: Unsicherheit für französische Unternehmen vor der Zusammenarbeit mit chinesischen Partnern reduzieren. Lieferantenidentifikation, Verhandlung, Qualitätskontrolle, Logistikkoordination.",
+      zh: "在校期间独立开展的商贸活动。义乌是全球最大的小商品批发市场。为法国中小企业寻找可靠供应商，负责谈判、初级质检和物流协调。",
     },
-    github: "https://github.com/Txemalon/Gestor-de-gastos-personales",
-    media: [
-      "/projects/gestor-gastos/dashboard.png",
-      "/projects/gestor-gastos/wallets.png",
-      "/projects/gestor-gastos/transacciones.png",
-      "/projects/gestor-gastos/categorias.png",
-      "/projects/gestor-gastos/reportes.png",
-      "/projects/gestor-gastos/inversiones.png",
-    ],
-    highlights: ["python", "javascript", "html5", "css"],
+    media: [],
+    highlights: [],
     align: "left",
     section: "project3",
-  },
-  {
-    num: "04",
-    name: {
-      es: "Tienda online de dianas",
-      en: "Dartboards e-commerce",
-    },
-    stack: [
-      "Next.js 15",
-      "React",
-      "TypeScript",
-      "Prisma",
-      "PostgreSQL",
-      "NextAuth",
-      "Stripe",
-      "Framer Motion",
-    ],
-    desc: {
-      es: "E-commerce moderno para venta de dianas con pagos integrados, autenticación social, panel de administración y animaciones fluidas.",
-      en: "Modern e-commerce for dartboards with integrated payments, social auth, an admin panel and smooth animations.",
-    },
-    details: {
-      es: "Tienda online completa con catálogo, carrito y checkout con Stripe. NextAuth con Google OAuth y credenciales, rate limiting con Upstash Redis, validación con Zod y un panel de administración separado (AdminJS sobre Express, puerto 3001). Transiciones y microinteracciones con Framer Motion para darle un acabado más premium que una tienda al uso.",
-      en: "A full e-commerce with catalogue, cart and Stripe checkout. NextAuth with Google OAuth and credentials, Upstash Redis for rate limiting, Zod validation, and a separate admin panel (AdminJS on Express, port 3001). Framer Motion powers transitions and micro-interactions for a more premium feel than a typical shop.",
-    },
-    media: [
-      "/projects/dianas/packs.png",
-      "/projects/dianas/catalogo.png",
-    ],
-    highlights: ["nextdotjs", "react", "typescript", "tailwindcss", "postgresql"],
-    badge: { es: "En construcción", en: "Under construction" },
-    align: "right",
-    section: "project4",
   },
 ];
 
@@ -184,42 +137,136 @@ const experiences: Array<{
   stack: string[];
 }> = [
   {
-    role: { es: "Tech Lead", en: "Tech Lead" },
-    company: "Activalink",
-    period: { es: "2023 — Presente", en: "2023 — Present" },
-    location: { es: "Alcoy, España", en: "Alcoy, Spain" },
+    role: {
+      fr: "Stagiaire Commercial",
+      en: "Sales Intern",
+      de: "Praktikant Vertrieb",
+      zh: "商务实习生",
+    },
+    company: "Golden Sun Health Technology Group",
+    period: { fr: "2025 — 2026", en: "2025 — 2026", de: "2025 — 2026", zh: "2025 — 2026" },
+    location: { fr: "Jinhua, Chine", en: "Jinhua, China", de: "Jinhua, China", zh: "中国金华" },
     summary: {
-      es: "Activalink implementa y adapta ERPs para pymes y grandes empresas. Desarrollo módulos y personalizaciones custom sobre Odoo, integraciones a medida y proyectos de implantación llave en mano. Lidero un equipo de 3 desarrolladores: nuestro trabajo se mide en tiempo ahorrado y errores evitados.",
-      en: "Activalink implements and customises ERPs for SMBs and large companies. I build custom modules and personalisations on top of Odoo, bespoke integrations, and end-to-end implementation projects. I lead a team of 3 developers: our work is measured in time saved and errors avoided.",
+      fr: "Stage de longue durée au sein d'un groupe spécialisé dans les technologies de santé. Développement commercial sur les marchés francophones, suivi clients et support à l'export.",
+      en: "Long-term internship in a health technology group. Business development on French-speaking markets, client follow-up and export support.",
+      de: "Langzeitpraktikum in einem Gesundheitstechnologieunternehmen. Geschäftsentwicklung auf frankophonen Märkten, Kundenbetreuung und Exportunterstützung.",
+      zh: "在健康科技集团的长期实习，负责法语市场开发、客户跟进和出口支持。",
     },
     bullets: [
       {
-        es: "OCR de facturas en Odoo — de 4 h/día a 30 min (−87 %).",
-        en: "Invoice OCR in Odoo — from 4 h/day down to 30 min (−87 %).",
+        fr: "Prospection et suivi de clients francophones à l'international.",
+        en: "Prospecting and managing French-speaking international clients.",
+        de: "Akquise und Betreuung frankophoner internationaler Kunden.",
+        zh: "开发和跟进法语市场国际客户。",
       },
       {
-        es: "Logística con mapa interactivo — −60 % errores de seguimiento.",
-        en: "Interactive logistics map — −60 % tracking errors.",
+        fr: "Rédaction de supports commerciaux et de communication en français.",
+        en: "Drafting commercial and communication materials in French.",
+        de: "Erstellung von Vertriebs- und Kommunikationsmaterialien auf Französisch.",
+        zh: "编写法语商业和营销材料。",
       },
       {
-        es: "Conciliación automática — cierre contable de 3 días a medio día.",
-        en: "Automated reconciliation — monthly close from 3 days to half a day.",
+        fr: "Coordination avec les équipes production et logistique pour l'export.",
+        en: "Coordination with production and logistics teams for export.",
+        de: "Koordination mit Produktions- und Logistikteams für den Export.",
+        zh: "与生产和物流团队协调出口事务。",
       },
       {
-        es: "Dashboards financieros — detección temprana de facturas sin emitir.",
-        en: "Financial dashboards — early detection of uninvoiced orders.",
+        fr: "Immersion totale en environnement professionnel chinois.",
+        en: "Full immersion in a Chinese professional environment.",
+        de: "Vollständige Immersion im chinesischen Berufsumfeld.",
+        zh: "完全融入中国职场环境。",
       },
     ],
-    stack: ["Odoo", "Python", "PostgreSQL", "Next.js", "TypeScript", "Docker"],
+    stack: ["Commerce international", "Mandarin", "Français", "Export", "B2B"],
+  },
+  {
+    role: {
+      fr: "Intermédiaire Commercial Indépendant",
+      en: "Independent Commercial Intermediary",
+      de: "Selbstständiger Handelsvermittler",
+      zh: "独立商贸中介",
+    },
+    company: "Yiwu Sourcing",
+    period: {
+      fr: "2024 — Présent",
+      en: "2024 — Present",
+      de: "2024 — Heute",
+      zh: "2024 — 至今",
+    },
+    location: { fr: "France / Chine", en: "France / China", de: "Frankreich / China", zh: "法国 / 中国" },
+    summary: {
+      fr: "Activité d'intermédiation B2B entre entreprises françaises et fournisseurs chinois à Yiwu — identification, qualification et coordination.",
+      en: "B2B intermediation between French companies and Chinese suppliers in Yiwu — identification, qualification and coordination.",
+      de: "B2B-Vermittlung zwischen französischen Unternehmen und chinesischen Lieferanten in Yiwu.",
+      zh: "法国企业与义乌中国供应商之间的 B2B 中介服务——识别、筛选与协调。",
+    },
+    bullets: [
+      {
+        fr: "Identification de fournisseurs fiables sur les marchés de Yiwu.",
+        en: "Identifying reliable suppliers in Yiwu markets.",
+        de: "Identifizierung zuverlässiger Lieferanten auf den Yiwu-Märkten.",
+        zh: "在义乌市场识别可靠供应商。",
+      },
+      {
+        fr: "Négociation des conditions commerciales et logistiques.",
+        en: "Negotiating commercial and logistics terms.",
+        de: "Verhandlung von Handels- und Logistikbedingungen.",
+        zh: "商务和物流条款谈判。",
+      },
+      {
+        fr: "Réduction du risque fournisseur pour les PME françaises.",
+        en: "Reducing supplier risk for French SMEs.",
+        de: "Reduzierung des Lieferantenrisikos für französische KMU.",
+        zh: "降低法国中小企业的供应商风险。",
+      },
+    ],
+    stack: ["Sourcing", "Négociation", "Alibaba", "WeChat", "Logistique"],
+  },
+  {
+    role: {
+      fr: "Étudiant — BUT Techniques de Commercialisation",
+      en: "Student — International Trade (BUT TC)",
+      de: "Student — Internationaler Handel (BUT TC)",
+      zh: "学生 — 国际贸易 (BUT TC)",
+    },
+    company: "IUT de l'Indre",
+    period: { fr: "2023 — 2026", en: "2023 — 2026", de: "2023 — 2026", zh: "2023 — 2026" },
+    location: { fr: "Issoudun, France", en: "Issoudun, France", de: "Issoudun, Frankreich", zh: "法国伊苏丹" },
+    summary: {
+      fr: "BUT TC option Commerce International dans un environnement économique dynamique (Safran, Louis Vuitton). Formation solide en marketing, négociation, analyse de marchés et gestion de projet.",
+      en: "BUT TC in International Trade in a dynamic economic environment (Safran, Louis Vuitton nearby). Solid training in marketing, negotiation, market analysis and project management.",
+      de: "BUT TC Internationaler Handel in einem dynamischen wirtschaftlichen Umfeld (Safran, Louis Vuitton). Solide Ausbildung in Marketing, Verhandlung, Marktanalyse und Projektmanagement.",
+      zh: "在动态经济环境中（附近有 Safran、Louis Vuitton）攻读国际贸易 BUT TC，扎实掌握营销、谈判、市场分析和项目管理。",
+    },
+    bullets: [
+      {
+        fr: "Marketing international, analyse de marchés, négociation.",
+        en: "International marketing, market analysis, negotiation.",
+        de: "Internationales Marketing, Marktanalyse, Verhandlung.",
+        zh: "国际营销、市场分析、商务谈判。",
+      },
+      {
+        fr: "Projets tuteurés en partenariat avec des entreprises locales.",
+        en: "Tutored projects in partnership with local companies.",
+        de: "Betreute Projekte in Zusammenarbeit mit lokalen Unternehmen.",
+        zh: "与当地企业合作的导师指导项目。",
+      },
+      {
+        fr: "Stage long en entreprise à l'international (Chine).",
+        en: "Long-term international company internship (China).",
+        de: "Langzeitpraktikum im internationalen Unternehmen (China).",
+        zh: "海外长期企业实习（中国）。",
+      },
+    ],
+    stack: ["Marketing", "Commerce International", "Gestion de projet", "Anglais", "Allemand"],
   },
 ];
 
-function pick<T>(loc: { es: T; en: T }, lang: Lang): T {
+function pick<T>(loc: { fr: T; en: T; de: T; zh: T }, lang: Lang): T {
   return loc[lang];
 }
 
-// Hero name split per word so each can rise independently. Whitespace
-// preserved as its own span so the line wraps naturally if needed.
 function HeroWord({
   text,
   delay,
@@ -243,7 +290,7 @@ export default function Home() {
   return (
     <SmoothScroll>
       <div className="relative">
-        {/* Persistent 3D scene — fullscreen behind content; events must reach it. */}
+        {/* Persistent 3D scene */}
         <div className="fixed inset-0 z-0">
           <FrozenKeyboard />
         </div>
@@ -255,7 +302,7 @@ export default function Home() {
               data-cursor="hover"
               className="text-sm font-semibold tracking-tight text-ice-100"
             >
-              Txema Albero
+              Antoine Pornin
             </span>
             <span className="status-pill hidden sm:inline-flex">
               {t("header.availability")}
@@ -264,7 +311,7 @@ export default function Home() {
           <div className="flex items-center gap-2 pointer-events-auto">
             <SeasonPicker />
             <a
-              href="https://github.com/Txemalon/3d-portfolio"
+              href="https://github.com/notsostoney/portfolio-v3"
               target="_blank"
               rel="noopener noreferrer"
               data-cursor="hover"
@@ -295,9 +342,9 @@ export default function Home() {
                 {t("hero.greeting")}
               </p>
               <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[8.5rem] font-bold tracking-[-0.03em] text-ice-50 leading-[0.92] whitespace-nowrap">
-                <HeroWord text="Txema" delay={120} />
+                <HeroWord text="Antoine" delay={120} />
                 <br />
-                <HeroWord text="Albero" delay={260} className="text-ice-400" />
+                <HeroWord text="Pornin" delay={260} className="text-ice-400" />
               </h1>
               <p
                 className="mt-8 text-base sm:text-lg md:text-xl text-ice-200 max-w-xl leading-relaxed fade-in-up"
@@ -314,7 +361,15 @@ export default function Home() {
                 style={{ ["--d" as string]: "700ms" }}
               >
                 <a
-                  href={lang === "en" ? "/cv_en.pdf" : "/cv.pdf"}
+                  href={
+                    lang === "en"
+                      ? "/portfolio-v3/cv/Antoine_Pornin_CV_EN.pdf"
+                      : lang === "de"
+                      ? "/portfolio-v3/cv/Antoine_Pornin_CV_DE.pdf"
+                      : lang === "zh"
+                      ? "/portfolio-v3/cv/Antoine_Pornin_CV_ZH.pdf"
+                      : "/portfolio-v3/cv/Antoine_Pornin_CV_FR.pdf"
+                  }
                   target="_blank"
                   rel="noopener noreferrer"
                   data-cursor="hover"
@@ -334,16 +389,14 @@ export default function Home() {
                   className="frost-btn"
                   onClick={() =>
                     document
-                      .querySelector<HTMLElement>(
-                        '[data-kb-section="contact"]'
-                      )
+                      .querySelector<HTMLElement>('[data-kb-section="contact"]')
                       ?.scrollIntoView({ behavior: "smooth", block: "start" })
                   }
                 >
                   {t("hero.hire")}
                 </button>
                 <a
-                  href="https://github.com/Txemalon"
+                  href="https://github.com/notsostoney"
                   target="_blank"
                   rel="noopener noreferrer"
                   data-cursor="hover"
@@ -356,7 +409,7 @@ export default function Home() {
                   </svg>
                 </a>
                 <a
-                  href="https://es.linkedin.com/in/jose-mar%C3%ADa-albero-belamendia-b9319a246"
+                  href="https://www.linkedin.com/in/antoine-pornin/"
                   target="_blank"
                   rel="noopener noreferrer"
                   data-cursor="hover"
@@ -368,23 +421,10 @@ export default function Home() {
                     <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v14H.22V8zm7.4 0h4.37v1.92h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.47 3.04 5.47 6.99V22h-4.56v-6.59c0-1.57-.03-3.6-2.19-3.6-2.19 0-2.53 1.71-2.53 3.48V22H7.62V8z" />
                   </svg>
                 </a>
-                <a
-                  href="https://x.com/Txemalon"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-cursor="hover"
-                  data-magnetic
-                  className="frost-icon"
-                  aria-label="X / Twitter"
-                >
-                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden>
-                    <path d="M17.18 3H20.5l-7.36 8.41L21.75 21h-6.62l-5.18-6.78L4.04 21H.7l7.86-8.97L0 3h6.78l4.69 6.21L17.18 3zm-1.16 16.13h1.84L6.06 4.79H4.09l11.93 14.34z" />
-                  </svg>
-                </a>
               </div>
             </div>
 
-            {/* Animated scroll indicator at bottom */}
+            {/* Scroll indicator */}
             <div
               className="mt-auto flex items-center gap-3 fade-in-up"
               style={{ ["--d" as string]: "900ms" }}
@@ -420,12 +460,7 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Experience — title is sticky at top-24 (feels anchored) but sits
-              BEHIND the cards (z-0 vs. card wrapper's z-10), so as you scroll
-              the card slides over the title. The section has no extra filler
-              beyond the cards, so when you scroll past the last card the
-              section ends and the title un-pins and exits the viewport at the
-              same time — giving the "anchored then both disappear" feel. */}
+          {/* Experience */}
           <section
             data-kb-section="experience"
             className="relative p-6 sm:p-10 md:p-14 pb-24"
@@ -475,10 +510,7 @@ export default function Home() {
 
                   <ul className="space-y-2.5 mb-6">
                     {exp.bullets.map((b, i) => (
-                      <li
-                        key={i}
-                        className="flex gap-3 text-ice-100 leading-relaxed"
-                      >
+                      <li key={i} className="flex gap-3 text-ice-100 leading-relaxed">
                         <span className="mt-[0.65em] flex-none w-1.5 h-1.5 rounded-full bg-ice-400" />
                         <span>{pick(b, lang)}</span>
                       </li>
@@ -487,11 +519,7 @@ export default function Home() {
 
                   <div className="flex flex-wrap gap-1.5">
                     {exp.stack.map((s) => (
-                      <span
-                        key={s}
-                        data-cursor="hover"
-                        className="frost-chip"
-                      >
+                      <span key={s} data-cursor="hover" className="frost-chip">
                         {s}
                       </span>
                     ))}
@@ -522,10 +550,7 @@ export default function Home() {
                 className={
                   p.align === "left"
                     ? "max-w-xl relative"
-                    : // Right-aligned cards get extra right padding on md+ so
-                      // the action buttons ("Ver más") don't sit under the
-                      // fixed SectionNav dots on the right edge.
-                      "max-w-xl ml-auto text-right relative md:mr-16 lg:mr-24"
+                    : "max-w-xl ml-auto text-right relative md:mr-16 lg:mr-24"
                 }
               >
                 <Reveal>
@@ -559,11 +584,7 @@ export default function Home() {
                     }
                   >
                     {p.stack.map((s) => (
-                      <span
-                        key={s}
-                        data-cursor="hover"
-                        className="frost-chip"
-                      >
+                      <span key={s} data-cursor="hover" className="frost-chip">
                         {s}
                       </span>
                     ))}
@@ -604,8 +625,7 @@ export default function Home() {
             </section>
           ))}
 
-          {/* Contact — copy pinned to the left so the (large, hero-posed)
-              keyboard on the right has room to bob its random keys. */}
+          {/* Contact */}
           <section
             data-kb-section="contact"
             className="relative min-h-screen flex flex-col justify-center p-6 sm:p-10 md:p-14 overflow-hidden"
@@ -626,10 +646,7 @@ export default function Home() {
               </Reveal>
               <Reveal delay={240}>
                 <div className="flex flex-wrap gap-3 pointer-events-auto">
-                  <CopyEmail
-                    email={EMAIL}
-                    className="frost-btn frost-btn--primary"
-                  >
+                  <CopyEmail email={EMAIL} className="frost-btn frost-btn--primary">
                     <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
                       <rect x="3" y="5" width="18" height="14" rx="2" />
                       <path d="M3 7l9 6 9-6" />
@@ -644,7 +661,7 @@ export default function Home() {
                     {t("contact.openMail")}
                   </a>
                   <a
-                    href="https://github.com/Txemalon"
+                    href="https://github.com/notsostoney"
                     target="_blank"
                     rel="noopener noreferrer"
                     data-cursor="hover"
@@ -653,7 +670,7 @@ export default function Home() {
                     {t("contact.github")}
                   </a>
                   <a
-                    href="https://es.linkedin.com/in/jose-mar%C3%ADa-albero-belamendia-b9319a246"
+                    href="https://www.linkedin.com/in/antoine-pornin/"
                     target="_blank"
                     rel="noopener noreferrer"
                     data-cursor="hover"
