@@ -72,14 +72,15 @@ export default function SectionNav() {
             type="button"
             onClick={() => goTo(s.id)}
             data-cursor="hover"
-            className="group relative flex items-center gap-3"
+            className="group relative flex items-center justify-end w-5"
             aria-label={s.label}
             aria-current={isActive ? "true" : undefined}
           >
+            {/* Label floats to the left — absolute so it never shifts the dot */}
             <span
-              className={`text-[10px] uppercase tracking-[0.25em] text-ice-200 transition-all duration-300 ${
+              className={`absolute right-full mr-3 whitespace-nowrap text-[10px] uppercase tracking-[0.25em] text-ice-200 transition-all duration-300 ${
                 isActive
-                  ? "opacity-100 -translate-x-1"
+                  ? "opacity-100 -translate-x-0"
                   : "opacity-0 translate-x-2 group-hover:opacity-80 group-hover:translate-x-0"
               }`}
             >
