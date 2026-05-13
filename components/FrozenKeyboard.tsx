@@ -781,7 +781,7 @@ function Keyboard() {
                 letter stays fixed regardless of how long the title is. */}
             <Text3D
               key={hoveredIcon.slug}
-              font="/fonts/space_grotesk_bold.typeface.json"
+              font={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/fonts/space_grotesk_bold.typeface.json`}
               size={0.25}
               height={0.1}
               curveSegments={12}
