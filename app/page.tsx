@@ -445,7 +445,7 @@ export default function Home() {
             className="relative min-h-[200vh] p-6 sm:p-10 md:p-14"
           >
             <div className="relative h-[150vh]">
-              <div className="sticky top-24 sm:top-28 text-center">
+              <div className="sticky top-20 sm:top-20 text-center">
                 <Reveal>
                   <h2 className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-[-0.03em] text-ice-50 leading-[0.95]">
                     {t("stack.title")}

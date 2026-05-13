@@ -65,7 +65,7 @@ export const DICT = {
     },
   },
   stack: {
-    title: { fr: "Compétences", en: "Skills", de: "Fähigkeiten", zh: "技能" },
+    title: { fr: "Tech Stack", en: "Tech Stack", de: "Tech Stack", zh: "Tech Stack" },
     hint: {
       fr: "(conseil : survolez une touche)",
       en: "(hint: hover over a key)",

@@ -23,22 +23,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Txema Albero — Software Engineer & Tech Lead",
+  title: "Antoine Pornin — Commerce International",
   description:
-    "Portfolio inmersivo de Txema Albero — Software Engineer / Tech Lead. Experiencias web 3D con Next.js y React Three Fiber.",
-  authors: [{ name: "Txema Albero" }],
+    "Portfolio interactif 3D d'Antoine Pornin — Étudiant en Commerce International. Ponts entre la France, l'Europe et la Chine.",
+  authors: [{ name: "Antoine Pornin" }],
   openGraph: {
-    title: "Txema Albero — Software Engineer & Tech Lead",
+    title: "Antoine Pornin — Commerce International",
     description:
-      "Portfolio inmersivo con escena 3D interactiva. Next.js, React Three Fiber, GLSL.",
+      "Portfolio interactif 3D avec scène React Three Fiber. Expériences FR/EN/DE/ZH.",
     type: "website",
-    locale: "es_ES",
+    locale: "fr_FR",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Txema Albero — Software Engineer & Tech Lead",
+    title: "Antoine Pornin — Commerce International",
     description:
-      "Portfolio inmersivo con escena 3D interactiva. Next.js, React Three Fiber, GLSL.",
+      "Portfolio interactif 3D avec scène React Three Fiber. Expériences FR/EN/DE/ZH.",
   },
 };
 
@@ -54,7 +54,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="es"
+      lang="fr"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
